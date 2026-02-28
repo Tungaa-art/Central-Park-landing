@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Central Park Gateway｜现代蒙古的地标之作</title>
+  <meta name="description" content="Central Park Gateway：位于乌兰巴托 Park Rio 沿线最后一块 AAA 级地块，集高端住宅、甲级写字楼与目的地商业于一体的综合地标。" />
+  <meta name="format-detection" content="telephone=no,email=no,address=no" />
+
+  <style>
+    :root{
+      --bg:#07080b;
+      --bg2:#0b0e14;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.08);
+      --text:#f4f6fb;
+      --muted:rgba(244,246,251,.72);
+      --muted2:rgba(244,246,251,.58);
+      --line:rgba(244,246,251,.12);
+      --brand:#caa86a;
+      --brand2:#f2d7a2;
+      --shadow: 0 20px 50px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:26px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 550px at 20% -10%, rgba(202,168,106,.18), transparent 60%),
+        radial-gradient(900px 520px at 90% 10%, rgba(242,215,162,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei",
+                   "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+      line-height:1.6;
+      letter-spacing:.2px;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 80px;}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(14px);
+      background: rgba(7,8,11,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:700;
+      letter-spacing:.8px;
+    }
+    .brand-badge{
+      width:34px; height:34px; border-radius:10px;
+      display:grid; place-items:center;
+      border:1px solid var(--line);
+      background: linear-gradient(135deg, rgba(202,168,106,.25), rgba(255,255,255,.06));
+      box-shadow: var(--shadow);
+      font-weight:800;
+    }
+    .nav-links{
+      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+      font-size:14px; color:var(--muted);
+    }
+    .nav-links a{padding:8px 10px; border-radius:12px;}
+    .nav-links a:hover{background:rgba(255,255,255,.06); color:var(--text);}
+    .cta{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:11px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:650;
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06);}
+    .btn.primary{
+      border-color: rgba(202,168,106,.55);
+      background: linear-gradient(135deg, rgba(202,168,106,.25), rgba(255,255,255,.05));
+    }
+    .hero{
+      padding:44px 0 10px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .panel{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-left{padding:26px 24px 22px;}
+    .kicker{color:var(--muted); font-size:13px; letter-spacing:.6px; text-transform:uppercase;}
+    h1{margin:10px 0 10px; font-size:46px; line-height:1.08;}
+    .lead{color:var(--muted); font-size:16px; max-width:56ch;}
+    .meta{
+      margin-top:16px;
+      display:flex; gap:10px; flex-wrap:wrap;
+      color:var(--muted2); font-size:13px;
+    }
+    .meta span{padding:8px 10px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.03);}
+    .hero-actions{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;}
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+    .stat{
+      padding:14px 14px 12px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .stat .big{font-size:20px; font-weight:780; letter-spacing:.2px;}
+    .stat .small{color:var(--muted2); font-size:12px; margin-top:4px;}
+    .hero-right{
+      display:grid;
+      grid-template-rows: 1fr;
+      min-height: 420px;
+      position:relative;
+    }
+    .hero-img{
+      width:100%; height:100%;
+      object-fit:cover;
+      filter: saturate(1.05) contrast(1.02);
+      transform: scale(1.02);
+    }
+    .img-overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(7,8,11,.15), rgba(7,8,11,.75));
+    }
+    .section{
+      margin-top:22px;
+      padding:26px 0 6px;
+    }
+    .section h2{
+      margin:0 0 10px;
+      font-size:26px;
+      letter-spacing:.2px;
+    }
+    .section p{margin:0; color:var(--muted); max-width:88ch;}
+    .grid{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      padding:16px 16px 14px;
+    }
+    .card h3{margin:0 0 6px; font-size:16px;}
+    .card p{margin:0; color:var(--muted2); font-size:13.5px;}
+    .split{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      align-items:stretch;
+    }
+    .media{
+      padding:0;
+      overflow:hidden;
+      position:relative;
+      min-height: 280px;
+    }
+    .media img{width:100%; height:100%; object-fit:cover;}
+    .media::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(7,8,11,.12), rgba(7,8,11,.82));
+    }
+    .table{
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      overflow:hidden;
+    }
+    table{width:100%; border-collapse:collapse; font-size:13.5px;}
+    th,td{padding:12px 12px; border-bottom:1px solid var(--line); text-align:left;}
+    th{color:var(--muted); font-weight:650; background: rgba(255,255,255,.03);}
+    td{color:var(--text);}
+    tr:last-child td{border-bottom:none;}
+    .note{color:var(--muted2); font-size:12.5px; margin-top:10px;}
+    .form-wrap{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:12px;
+      align-items:stretch;
+      margin-top:14px;
+    }
+    .side{
+      padding:18px;
+    }
+    .side h3{margin:0 0 8px;}
+    .side ul{margin:10px 0 0; padding-left:18px; color:var(--muted2); font-size:13.5px;}
+    form{padding:18px;}
+    label{display:block; color:var(--muted); font-size:12.5px; margin:12px 0 6px;}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:96px; resize:vertical;}
+    .form-row{display:grid; grid-template-columns: 1fr 1fr; gap:10px;}
+    .form-actions{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+    .fineprint{margin-top:10px; color:var(--muted2); font-size:12.5px;}
+    footer{
+      margin-top:36px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted2);
+      font-size:12.5px;
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .contact{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+    }
+    .contact a{color:var(--brand2);}
+
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr; }
+      .hero-right{min-height:340px;}
+      .grid{grid-template-columns:1fr;}
+      .split{grid-template-columns:1fr;}
+      .form-wrap{grid-template-columns:1fr;}
+      h1{font-size:40px;}
+      .stats{grid-template-columns:1fr;}
+      .form-row{grid-template-columns:1fr;}
+      .nav-links{display:none;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-badge">CP</div>
+        <div>
+          <div style="font-size:14px; font-weight:800; line-height:1;">Central Park Gateway</div>
+          <div style="font-size:12px; color:var(--muted); line-height:1.2;">乌兰巴托 — Park Rio 沿线</div>
+        </div>
+      </div>
+
+      <div class="nav-links" aria-label="页面导航">
+        <a href="#experience">体验生态</a>
+        <a href="#location">黄金地段</a>
+        <a href="#mix">住宅与写字楼</a>
+        <a href="#investment">投资价值</a>
+      </div>
+
+      <div class="cta">
+        <span class="pill">2026 年预售启动</span>
+        <a class="btn primary" href="#register">登记意向</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="panel hero-left">
+        <div class="kicker">乌兰巴托综合地标</div>
+        <h1>现代蒙古<br/>的地标之作</h1>
+        <p class="lead">
+          一座“垂直生态系统”，将奢华住宅、甲级写字楼与目的地商业汇聚于一体，
+          坐落在 Park Rio 沿线最后一块 AAA 级稀缺地段。
+        </p>
+
+        <div class="meta">
+          <span>Park Rio 沿线</span>
+          <span>住宅 • 写字楼 • 商业</span>
+          <span>预计交付：2028–2029</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#register">下载项目手册</a>
+          <a class="btn" href="#experience">探索体验生态</a>
+        </div>
+
+        <div class="stats" aria-label="关键数据">
+          <div class="stat">
+            <div class="small">起价</div>
+            <div class="big">USD 3,300 / m²*</div>
+          </div>
+          <div class="stat">
+            <div class="small">住宅销售收入</div>
+            <div class="big">USD 129M</div>
+          </div>
+          <div class="stat">
+            <div class="small">总开发规模</div>
+            <div class="big">USD 200M</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel hero-right" aria-label="头图">
+        <!-- 把下面文件名换成你仓库真实图片文件名 -->
+        <img class="hero-img" src="images/hero.jpg" alt="Central Park Gateway 头图渲染" />
+        <div class="img-overlay"></div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="section" aria-label="项目亮点">
+      <div class="grid">
+        <div class="card">
+          <h3>Park Rio 沿线最后 AAA 级地块</h3>
+          <p>不可复制的稀缺性，支撑长期保值与需求韧性。</p>
+        </div>
+        <div class="card">
+          <h3>蒙古首个垂直生活方式生态</h3>
+          <p>将居住、办公、社交、文化、健康在一处完整闭环。</p>
+        </div>
+        <div class="card">
+          <h3>超高端空中别墅与停机坪会所</h3>
+          <p>定义乌兰巴托高净值人群的“空中府邸”生活方式。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <h2>体验生态｜艺术、健康与文化的垂直世界</h2>
+      <p>
+        Central Park Gateway 不止是传统地产，更是由世界级配套组成的目的地综合体，
+        在同类项目中具备国际级竞争力。
+      </p>
+
+      <div class="grid" style="margin-top:14px;">
+        <div class="card">
+          <h3>空中温泉 & 热疗 SPA</h3>
+          <p>全年恒温的疗愈空间，玻璃穹顶与城市天际线景观，打造度假级居家健康体验。</p>
+        </div>
+        <div class="card">
+          <h3>空中森林 & 城市农业</h3>
+          <p>垂直绿化、香草花园与城市农场平台，为餐饮提供本地供给，让日常更贴近自然。</p>
+        </div>
+        <div class="card">
+          <h3>艺术与文化展亭</h3>
+          <p>轮换展览、使馆活动与沉浸式数字展示，让项目成为城市文化地标。</p>
+        </div>
+        <div class="card">
+          <h3>图书馆 & 沙龙会客厅</h3>
+          <p>胡桃木与黄铜质感空间，壁炉、酒吧与静谧阅读区，适合私享聚会与沉思时刻。</p>
+        </div>
+        <div class="card">
+          <h3>户外星空影院露台</h3>
+          <p>露天观影与精选餐饮服务，尽享乌兰巴托不断演进的天际线。</p>
+        </div>
+        <div class="card">
+          <h3>空中会所｜屋顶酒吧</h3>
+          <p>360° 城市景观、精调鸡尾酒与面向国际社群的社交日历。</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="card">
+          <h3>科技与创新</h3>
+          <p style="margin-top:6px;">
+            智能互联的高塔，提供酒店级服务体系，由 AI、卫星连接与实时可持续数据驱动。
+          </p>
+          <p class="note" style="margin-top:10px;">
+            关键词：AI 管家与智能家居控制｜Starlink 工作会客区｜电竞与高尔夫模拟｜可持续表现展示墙
+          </p>
+        </div>
+
+        <div class="panel media" aria-label="体验生态配图">
+          <img src="images/experience.jpg" alt="体验生态概览图" />
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="section" id="location">
+      <h2>地段｜Park Rio 核心不可替代的地址</h2>
+      <p>
+        位于 Park Rio 沿线最后一块 AAA 级临街地段，处在乌兰巴托文化、金融与外交核心区，
+        地段价值无法复制。
+      </p>
+
+      <div class="split">
+        <div class="card">
+          <h3>零可比供应</h3>
+          <p style="margin-top:6px;">
+            Park Rio 沿线未来不再有同等级土地释放，稀缺性带来结构性优势，
+            支撑长期保值与持续需求（住宅与商业同样受益）。
+          </p>
+
+          <div class="grid" style="grid-template-columns:1fr; margin-top:12px;">
+            <div class="card" style="background:rgba(255,255,255,.03);">
+              <h3 style="margin-bottom:8px;">关键通达性</h3>
+              <p>• 2–5 分钟到核心 CBD 办公区与政府机构</p>
+              <p>• 步行可达优质国际学校</p>
+              <p>• 紧邻高端商场与餐饮配套</p>
+              <p>• Park Rio 及河景视廊保护，视野稀缺</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel media" aria-label="区位图">
+          <img src="images/location.jpg" alt="乌兰巴托区位图" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MIX -->
+    <section class="section" id="mix">
+      <h2>产品组合｜超高端居住 × 甲级办公 × 高效商业</h2>
+      <p>
+        Central Park Gateway 将空中别墅、高端公寓、机构级写字楼与高性能零售整合成一个完整生态，
+        在同一地址实现“居住-办公-消费-社交”的闭环体验。
+      </p>
+
+      <div class="grid" style="margin-top:14px;">
+        <div class="card">
+          <h3>超高端居住</h3>
+          <p>空中别墅与顶层花园，配备停机坪会所，树立乌兰巴托高净值居住新标准。</p>
+        </div>
+        <div class="card">
+          <h3>现代公寓与写字楼</h3>
+          <p>采光充足、效率优先的户型与办公层，满足本地与国际企业入驻需求。</p>
+        </div>
+        <div class="card">
+          <h3>目的地商业与餐饮集群</h3>
+          <p>Park Rio 临街黄金展示面，打造高端零售与餐饮目的地。</p>
+        </div>
+      </div>
+
+      <div class="table" role="region" aria-label="产品概览">
+        <table>
+          <thead>
+            <tr>
+              <th>业态</th>
+              <th>定位</th>
+              <th>参考价格*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>住宅</td>
+              <td>空中别墅与高端公寓</td>
+              <td>USD 3,300 – 7,000 / m²</td>
+            </tr>
+            <tr>
+              <td>写字楼</td>
+              <td>核心区 CBD 级办公层</td>
+              <td>乌兰巴托领先办公定价</td>
+            </tr>
+            <tr>
+              <td>商业</td>
+              <td>目的地购物与餐饮集群</td>
+              <td>Park Rio 临街溢价</td>
+            </tr>
+            <tr>
+              <td>配套</td>
+              <td>温泉、空中会所、俱乐部空间</td>
+              <td>仅住户与租户专享</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">
+        * 综合体定价策略将根据市场去化、施工节点与乌兰巴托住宅/办公/商业数据持续优化。
+      </p>
+
+      <div class="split">
+        <div class="panel media" aria-label="建筑形态配图">
+          <img src="images/architecture.jpg" alt="非盒子化建筑形态渲染" />
+        </div>
+        <div class="card">
+          <h3>建筑愿景｜非盒子化天际线地标</h3>
+          <p style="margin-top:6px;">
+            雕塑感体量、层叠露台与递进轮廓，既强化地标识别度，也最大化视野、采光与户外空间。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTMENT -->
+    <section class="section" id="investment">
+      <h2>投资价值｜一代难遇的资本保全型资产</h2>
+      <p>
+        由成熟开发团队与经验丰富的营销伙伴联合打造，项目以住宅、办公、商业多元收入结构，
+        追求在不同周期下的稳健回报。
+      </p>
+
+      <div class="grid" style="margin-top:14px;">
+        <div class="card">
+          <h3>结构化发售策略</h3>
+          <p>分阶段释放，兼顾去化健康与品牌溢价成长。</p>
+        </div>
+        <div class="card">
+          <h3>战略定价体系</h3>
+          <p>与施工节点和市场需求匹配，保护早期购买者并放大上行空间。</p>
+        </div>
+        <div class="card">
+          <h3>稀缺性驱动的保值逻辑</h3>
+          <p>Park Rio 沿线“最后 AAA”区位稀缺，形成天然护城河。</p>
+        </div>
+      </div>
+
+      <div class="table" role="region" aria-label="定价路线图">
+        <table>
+          <thead>
+            <tr>
+              <th>阶段</th>
+              <th>时间</th>
+              <th>参考价格</th>
+              <th>要点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>预售</td>
+              <td>2026</td>
+              <td>USD 3,300 / m² 起</td>
+              <td>早鸟优势，优质楼层/朝向限量释放</td>
+            </tr>
+            <tr>
+              <td>中期销售</td>
+              <td>2027</td>
+              <td>USD 3,800 – 4,500 / m²</td>
+              <td>体验生态逐步兑现，价值验证带来溢价</td>
+            </tr>
+            <tr>
+              <td>交付阶段</td>
+              <td>2028–2029</td>
+              <td>USD 5,000 – 5,500 / m²</td>
+              <td>地标全面落成，价格进入顶级区间</td>
+            </tr>
+            <tr>
+              <td>空中别墅/顶层</td>
+              <td>2028–2029</td>
+              <td>USD 6,500 – 7,000 / m²</td>
+              <td>蒙古最稀缺高端住宅，停机坪会所加持</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3>预计销售收入（保守测算）</h3>
+        <p style="margin-top:6px;">
+          总销售额约 USD 200M；其中住宅约 USD 129M、写字楼约 USD 45M、商业约 USD 26M。
+        </p>
+        <p class="note" style="margin-top:10px;">
+          分期释放（约 30% 预售、40% 中期、30% 交付）有助于健康去化并推动价格随品牌成熟增长。
+          * 高收益情景测算；低收益假设可能降低约 20%。
+        </p>
+      </div>
+    </section>
+
+    <!-- REGISTER -->
+    <section class="section" id="register">
+      <h2>私享预览｜登记意向</h2>
+      <p>
+        填写简单信息，我们的团队将与您联系，提供可售/可租信息、匹配户型建议与后续流程。
+      </p>
+
+      <div class="form-wrap">
+        <div class="panel side">
+          <h3>您将获得</h3>
+          <ul>
+            <li>优先认购/认租资格</li>
+            <li>投资与产品说明会邀请</li>
+            <li>项目发布与活动通知</li>
+            <li>售楼处参观安排</li>
+          </ul>
+
+          <div class="card" style="margin-top:14px; background:rgba(255,255,255,.03);">
+            <h3>售楼处开放时间</h3>
+            <p style="margin-top:6px;">周一至周六 • 10:00–19:00</p>
+            <div class="note" style="margin-top:10px;">
+              联系方式：<a href="mailto:info@centralparkgateway.mn">info@centralparkgateway.mn</a><br/>
+              地址：Park Rio 沿线，乌兰巴托
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div>
+                <label for="name">姓名</label>
+                <input id="name" name="name" placeholder="请输入您的姓名" required />
+              </div>
+              <div>
+                <label for="email">邮箱</label>
+                <input id="email" name="email" type="email" placeholder="name@example.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="phone">电话 / WhatsApp</label>
+                <input id="phone" name="phone" placeholder="+976 ..." />
+              </div>
+              <div>
+                <label for="city">城市 / 国家</label>
+                <input id="city" name="city" placeholder="乌兰巴托 / 中国 / ..." />
+              </div>
+            </div>
+
+            <label for="interest">主要意向</label>
+            <select id="interest" name="interest">
+              <option>住宅购买</option>
+              <option>写字楼空间</option>
+              <option>商业铺位</option>
+              <option>投资咨询</option>
+              <option>了解更多信息</option>
+            </select>
+
+            <label for="budget">预算区间（参考）</label>
+            <select id="budget" name="budget">
+              <option>USD 300k 以下</option>
+              <option>USD 300k – 600k</option>
+              <option>USD 600k – 1M</option>
+              <option>USD 1M – 3M</option>
+              <option>USD 3M+</option>
+            </select>
+
+            <label for="notes">备注</label>
+            <textarea id="notes" name="notes" placeholder="例如：偏好楼层/朝向、用途、预计购买时间等"></textarea>
+
+            <div class="form-actions">
+              <button class="btn primary" type="submit">提交登记</button>
+              <a class="btn" href="#top">返回顶部</a>
+            </div>
+
+            <div class="fineprint">
+              您的信息将严格保密，仅用于 Central Park Gateway 相关沟通。
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="panel media" style="margin-top:12px;">
+        <img src="images/footer.jpg" alt="夜景渲染图" />
+      </div>
+    </section>
+
+    <footer>
+      <div>© Central Park Gateway. 保留所有权利。</div>
+      <div class="contact">
+        <span>联系：</span>
+        <a href="mailto:info@centralparkgateway.mn">info@centralparkgateway.mn</a>
+        <span style="opacity:.6;">｜</span>
+        <span>乌兰巴托 — Park Rio 综合体</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // 平滑滚动（不依赖任何库）
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const id = a.getAttribute("href");
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    function handleSubmit(e){
+      e.preventDefault();
+      // 这里先做前端占位：你可以替换为真实表单提交（Formspree / Google Forms / 自家 API）
+      alert("已提交！我们会在一个工作日内与您联系。");
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
