@@ -1,1804 +1,739 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <title>Central Park Gateway | The Icon of Modern Mongolia</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Central Park Gateway – Mongolia's first experiential mixed-use landmark in Ulaanbaatar, where wellness, art, technology and luxury converge into one extraordinary address."
-  />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Central Park Gateway｜现代蒙古的地标之作</title>
+  <meta name="description" content="Central Park Gateway：位于乌兰巴托 Park Rio 沿线最后一块 AAA 级地块，集高端住宅、甲级写字楼与目的地商业于一体的综合地标。" />
+  <meta name="format-detection" content="telephone=no,email=no,address=no" />
+
   <style>
-    :root {
-      --bg: #05060a;
-      --bg-alt: #0c0f16;
-      --bg-soft: #151924;
-      --accent: #d9b36c;
-      --accent-soft: rgba(217, 179, 108, 0.12);
-      --text: #f5f5f7;
-      --muted: #a1a5b5;
-      --border: #23293a;
-      --danger: #e15f5f;
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --radius-sm: 999px;
-      --shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.45);
-      --max-width: 1120px;
+    :root{
+      --bg:#07080b;
+      --bg2:#0b0e14;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.08);
+      --text:#f4f6fb;
+      --muted:rgba(244,246,251,.72);
+      --muted2:rgba(244,246,251,.58);
+      --line:rgba(244,246,251,.12);
+      --brand:#caa86a;
+      --brand2:#f2d7a2;
+      --shadow: 0 20px 50px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:26px;
+      --max:1120px;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 550px at 20% -10%, rgba(202,168,106,.18), transparent 60%),
+        radial-gradient(900px 520px at 90% 10%, rgba(242,215,162,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei",
+                   "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+      line-height:1.6;
+      letter-spacing:.2px;
     }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #171c2b 0, #05060a 52%);
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.6;
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 80px;}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(14px);
+      background: rgba(7,8,11,.55);
+      border-bottom:1px solid var(--line);
     }
-
-    img {
-      max-width: 100%;
-      display: block;
+    .nav-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:700;
+      letter-spacing:.8px;
     }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    .brand-badge{
+      width:34px; height:34px; border-radius:10px;
+      display:grid; place-items:center;
+      border:1px solid var(--line);
+      background: linear-gradient(135deg, rgba(202,168,106,.25), rgba(255,255,255,.06));
+      box-shadow: var(--shadow);
+      font-weight:800;
     }
-
-    .shell {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 20px;
+    .nav-links{
+      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+      font-size:14px; color:var(--muted);
     }
-
-    /* Top bar / nav */
-.lang-switch{
-  display:flex;
-  gap:8px;
-  align-items:center;
-}
-.lang-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:8px 10px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.04);
-  color: var(--muted);
-  font-size: 13px;
-  text-decoration:none;
-}
-.lang-btn:hover{
+    .nav-links a{padding:8px 10px; border-radius:12px;}
+    .nav-links a:hover{background:rgba(255,255,255,.06); color:var(--text);}
+    .cta{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:11px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:650;
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06);}
+    .btn.primary{
+      border-color: rgba(202,168,106,.55);
+      background: linear-gradient(135deg, rgba(202,168,106,.25), rgba(255,255,255,.05));
+    }
+    .hero{
+      padding:44px 0 10px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .panel{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .lang-switch{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    }
+    .lang-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 10px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background: rgba(255,255,255,.04);
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration:none;
+  }
+  .lang-btn:hover{
   background: rgba(255,255,255,.06);
   color: var(--text);
-}
-.lang-btn.active{
+  }
+  .lang-btn.active{
   border-color: rgba(202,168,106,.55);
   background: linear-gradient(135deg, rgba(202,168,106,.25), rgba(255,255,255,.05));
   color: var(--text);
-}
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(
-        to bottom,
-        rgba(5, 6, 10, 0.95),
-        rgba(5, 6, 10, 0.7),
-        transparent
-      );
-      border-bottom: 1px solid rgba(68, 74, 98, 0.5);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 0;
-      gap: 20px;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 18px;
-      background: radial-gradient(circle at 30% 30%, #fce0a3, #8b6a30);
-      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08),
-        0 18px 32px rgba(0, 0, 0, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 18px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #1a1103;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-    }
-
-    .logo-title {
-      font-size: 14px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #f8f4eb;
-    }
-
-    .logo-sub {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--muted);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      position: relative;
-      padding-bottom: 4px;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent);
-      transition: width 0.18s ease-out;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .pill {
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(102, 116, 165, 0.7);
-      padding: 4px 10px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-    }
-
-    .btn-gold {
-      border-radius: var(--radius-sm);
-      border: none;
-      padding: 9px 18px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      background: linear-gradient(135deg, #f7e2ac, #b4883e);
-      color: #1a1207;
-      font-weight: 600;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .btn-gold:hover {
-      filter: brightness(1.06);
-    }
-
-    /* Header banner image */
-
-    .header-banner {
-      width: 100%;
-      border-bottom: 1px solid rgba(80, 88, 120, 0.6);
-      background: #05060a;
-    }
-
-    .header-banner-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 6px 20px 0;
-    }
-
-    .header-banner-image {
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(124, 136, 184, 0.85);
-      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.7);
-    }
-
-    .header-banner-image img {
-      width: 100%;
-      height: auto;
-      max-height: 260px;
-      object-fit: cover;
-    }
-.lang-switch{
-  display:flex;
-  gap:8px;
-  align-items:center;
-}
-.lang-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:8px 10px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.04);
-  color: var(--muted);
-  font-size: 13px;
-  text-decoration:none;
-}
-.lang-btn:hover{
-  background: rgba(255,255,255,.06);
-  color: var(--text);
-}
-.lang-btn.active{
-  border-color: rgba(202,168,106,.55);
-  background: linear-gradient(135deg, rgba(202,168,106,.25), rgba(255,255,255,.05));
-  color: var(--text);
-}
-    
-    /* Hero */
-
-    .hero {
-      padding: 32px 0 72px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 44px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    .hero-title {
-      font-size: clamp(32px, 3.6vw, 42px);
-      line-height: 1.1;
-      font-weight: 550;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .hero-kicker {
-      font-size: 16px;
-      color: var(--muted);
-      max-width: 460px;
-      margin-bottom: 26px;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 30px;
-      margin-bottom: 26px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .hero-meta span {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-
-    .btn-outline {
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(100, 115, 163, 0.9);
-      padding: 8px 16px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      background: rgba(14, 18, 32, 0.9);
-      color: var(--muted);
-      cursor: pointer;
-    }
-
-    .hero-stat-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      padding-top: 6px;
-      border-top: 1px solid var(--border);
-    }
-
-    .hero-stat {
-      min-width: 120px;
-    }
-
-    .hero-stat-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .hero-stat-value {
-      font-size: 15px;
-    }
-
-    .hero-visual {
-      position: relative;
-    }
-
-    .hero-card {
-      border-radius: var(--radius-lg);
-      background: radial-gradient(circle at top left, #262e40, #05060a);
-      border: 1px solid rgba(120, 132, 176, 0.85);
-      padding: 16px;
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-    }
-
-    .hero-image-frame {
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid rgba(228, 209, 159, 0.35);
-    }
-
-    .hero-image-frame img {
-      width: 100%;
-      height: auto;
-      max-height: 420px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-tag {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      background: rgba(5, 6, 10, 0.75);
-      padding: 6px 12px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(255, 255, 255, 0.26);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #f8f4ec;
-    }
-
-    .hero-glass-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .hero-chip {
-      background: rgba(10, 14, 28, 0.85);
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(113, 126, 177, 0.7);
-      padding: 7px 12px;
-      font-size: 11px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    /* Section helpers */
-
-    section {
-      padding: 48px 0;
-    }
-
-    .section-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 26px;
-      align-items: flex-end;
-    }
-
-    .section-eyebrow {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      font-size: 20px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .section-sub {
-      max-width: 440px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .card-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      padding: 16px 16px 18px;
-      border-radius: var(--radius-md);
-      background: radial-gradient(circle at top, #191f2d, #090b11);
-      border: 1px solid rgba(79, 90, 131, 0.9);
-    }
-
-    .card-soft {
-      background: rgba(10, 12, 20, 0.94);
-      border-color: rgba(61, 70, 106, 0.9);
-    }
-
-    .card-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-
-    .card-title {
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
-    .card-body {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* Experience ecosystem */
-
-    .experience {
-      background: radial-gradient(circle at top, #111525, #05060a);
-      border-top: 1px solid rgba(80, 90, 130, 0.7);
-      border-bottom: 1px solid rgba(80, 90, 130, 0.6);
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-      gap: 24px;
-      align-items: flex-start;
-    }
-
-    .experience-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .experience-note {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 12px;
-    }
-
-    .experience-visual {
-      background: var(--bg-soft);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(103, 116, 163, 0.8);
-      padding: 18px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .experience-visual h4 {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .experience-visual-main {
-      font-size: 15px;
-      margin-bottom: 8px;
-    }
-
-    .experience-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 11px;
-    }
-
-    .chip {
-      padding: 6px 10px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(124, 138, 188, 0.8);
-      background: rgba(7, 11, 24, 0.95);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-    }
-
-    /* Layout image under experience */
-
-    .layout-visual {
-      margin-top: 20px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(126, 138, 190, 0.85);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-    }
-
-    .layout-visual img {
-      width: 100%;
-      height: auto;
-      max-height: 420px;
-      object-fit: cover;
-    }
-
-    /* Location */
-
-    .location-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 24px;
-      align-items: center;
-    }
-
-    .location-map {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(126, 139, 191, 0.9);
-      background: radial-gradient(circle at top, #272f44, #05060a);
-      padding: 16px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .location-map-inner {
-      border-radius: 18px;
-      border: 1px solid rgba(224, 204, 156, 0.4);
-      padding: 12px;
-      background: linear-gradient(145deg, #111523, #090b12);
-      min-height: 220px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .map-figure {
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(142, 155, 204, 0.9);
-      margin-bottom: 10px;
-    }
-
-    .map-figure img {
-      width: 100%;
-      height: auto;
-      max-height: 260px;
-      display: block;
-      object-fit: cover;
-    }
-
-    .location-tagline {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .location-points {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .location-pill {
-      border-radius: var(--radius-sm);
-      padding: 7px 10px;
-      background: rgba(8, 10, 20, 0.9);
-      border: 1px solid rgba(83, 95, 141, 0.9);
-    }
-
-    /* Product mix */
-
-    .mix-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-      gap: 24px;
-    }
-
-    .mix-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-      margin-top: 10px;
-    }
-
-    .mix-table th,
-    .mix-table td {
-      padding: 8px 10px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .mix-table th {
-      text-align: left;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-    }
-
-    .mix-highlight {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 8px;
-    }
-
-    /* Gallery */
-
-    .gallery {
-      background: radial-gradient(circle at top, #171a2a, #05060a);
-      border-top: 1px solid rgba(92, 104, 150, 0.7);
-      border-bottom: 1px solid rgba(92, 104, 150, 0.7);
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 2fr 1.4fr;
-      gap: 14px;
-    }
-
-    .gallery-main,
-    .gallery-side {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(125, 137, 188, 0.9);
-      background: #05060a;
-    }
-
-    .gallery-main {
-      max-height: 420px;
-    }
-
-    .gallery-main img {
-      width: 100%;
-      height: auto;
-      max-height: 420px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .gallery-side {
-      max-height: 420px;
-    }
-
-    .gallery-side-grid {
-      display: grid;
-      grid-template-rows: repeat(2, minmax(0, 0.5fr));
-      gap: 10px;
-      height: 100%;
   }
-
-    /* Investment + pricing */
-
-    .invest-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      gap: 24px;
-      align-items: flex-start;
+      
     }
-
-    .badge-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(116, 130, 180, 0.9);
-      background: rgba(8, 11, 23, 0.96);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 10px;
+    .hero-left{padding:26px 24px 22px;}
+    .kicker{color:var(--muted); font-size:13px; letter-spacing:.6px; text-transform:uppercase;}
+    h1{margin:10px 0 10px; font-size:46px; line-height:1.08;}
+    .lead{color:var(--muted); font-size:16px; max-width:56ch;}
+    .meta{
+      margin-top:16px;
+      display:flex; gap:10px; flex-wrap:wrap;
+      color:var(--muted2); font-size:13px;
     }
-
-    .badge-tag span {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(217, 179, 108, 0.22);
+    .meta span{padding:8px 10px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.03);}
+    .hero-actions{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;}
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:18px;
     }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 10px;
+    .stat{
+      padding:14px 14px 12px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
     }
-
-    .pricing-tile {
-      border-radius: var(--radius-md);
-      padding: 12px 12px 14px;
-      background: radial-gradient(circle at top left, #1a2133, #05060a);
-      border: 1px solid rgba(101, 115, 170, 0.9);
-      font-size: 12px;
+    .stat .big{font-size:20px; font-weight:780; letter-spacing:.2px;}
+    .stat .small{color:var(--muted2); font-size:12px; margin-top:4px;}
+    .hero-right{
+      display:grid;
+      grid-template-rows: 1fr;
+      min-height: 420px;
+      position:relative;
     }
-
-    .pricing-phase {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 3px;
+    .hero-img{
+      width:100%; height:100%;
+      object-fit:cover;
+      filter: saturate(1.05) contrast(1.02);
+      transform: scale(1.02);
     }
-
-    .pricing-range {
-      font-size: 14px;
-      margin-bottom: 4px;
+    .img-overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(7,8,11,.15), rgba(7,8,11,.75));
     }
-
-    .pricing-note {
-      font-size: 11px;
-      color: var(--muted);
+    .section{
+      margin-top:22px;
+      padding:26px 0 6px;
     }
-
-    .invest-figure {
-      margin-top: 10px;
-      padding: 12px 14px;
-      border-radius: var(--radius-md);
-      background: rgba(9, 12, 24, 0.96);
-      border: 1px solid rgba(116, 130, 180, 0.85);
-      font-size: 13px;
-      color: var(--muted);
+    .section h2{
+      margin:0 0 10px;
+      font-size:26px;
+      letter-spacing:.2px;
     }
-
-    .invest-figure strong {
-      color: var(--accent);
+    .section p{margin:0; color:var(--muted); max-width:88ch;}
+    .grid{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
     }
-
-    /* Contact */
-
-    .contact {
-      padding: 40px 0 60px;
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      padding:16px 16px 14px;
     }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 24px;
-      align-items: flex-start;
+    .card h3{margin:0 0 6px; font-size:16px;}
+    .card p{margin:0; color:var(--muted2); font-size:13.5px;}
+    .split{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      align-items:stretch;
     }
-
-    .contact-panel {
-      border-radius: var(--radius-lg);
-      background: rgba(9, 11, 20, 0.97);
-      border: 1px solid rgba(109, 123, 176, 0.9);
-      padding: 20px 20px 22px;
-      box-shadow: var(--shadow-soft);
+    .media{
+      padding:0;
+      overflow:hidden;
+      position:relative;
+      min-height: 280px;
     }
-
-    .contact-panel h3 {
-      font-size: 16px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+    .media img{width:100%; height:100%; object-fit:cover;}
+    .media::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(7,8,11,.12), rgba(7,8,11,.82));
     }
-
-    .contact-panel p {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 16px;
+    .table{
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      overflow:hidden;
     }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 12px;
-      font-size: 13px;
+    table{width:100%; border-collapse:collapse; font-size:13.5px;}
+    th,td{padding:12px 12px; border-bottom:1px solid var(--line); text-align:left;}
+    th{color:var(--muted); font-weight:650; background: rgba(255,255,255,.03);}
+    td{color:var(--text);}
+    tr:last-child td{border-bottom:none;}
+    .note{color:var(--muted2); font-size:12.5px; margin-top:10px;}
+    .form-wrap{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:12px;
+      align-items:stretch;
+      margin-top:14px;
     }
-
-    .form-grid-1 {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 12px;
-      margin-bottom: 12px;
-      font-size: 13px;
+    .side{
+      padding:18px;
     }
-
-    label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      display: block;
-      margin-bottom: 6px;
+    .side h3{margin:0 0 8px;}
+    .side ul{margin:10px 0 0; padding-left:18px; color:var(--muted2); font-size:13.5px;}
+    form{padding:18px;}
+    label{display:block; color:var(--muted); font-size:12.5px; margin:12px 0 6px;}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      outline:none;
     }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(88, 101, 152, 0.9);
-      background: rgba(5, 7, 14, 0.96);
-      color: var(--text);
-      font-size: 13px;
-      outline: none;
+    textarea{min-height:96px; resize:vertical;}
+    .form-row{display:grid; grid-template-columns: 1fr 1fr; gap:10px;}
+    .form-actions{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+    .fineprint{margin-top:10px; color:var(--muted2); font-size:12.5px;}
+    footer{
+      margin-top:36px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted2);
+      font-size:12.5px;
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
     }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(217, 179, 108, 0.6);
+    .contact{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
     }
+    .contact a{color:var(--brand2);}
 
-    textarea {
-      min-height: 80px;
-      resize: vertical;
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr; }
+      .hero-right{min-height:340px;}
+      .grid{grid-template-columns:1fr;}
+      .split{grid-template-columns:1fr;}
+      .form-wrap{grid-template-columns:1fr;}
+      h1{font-size:40px;}
+      .stats{grid-template-columns:1fr;}
+      .form-row{grid-template-columns:1fr;}
+      .nav-links{display:none;}
     }
-
-    .contact-fineprint {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 10px;
-    }
-
-    /* Footer image block */
-
-    .footer-image-section {
-      padding: 40px 0 20px;
-    }
-
-    .footer-image-frame {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(123, 136, 188, 0.9);
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.7);
-    }
-
-    .footer-image-frame img {
-      width: 100%;
-      height: auto;
-      max-height: 380px;
-      object-fit: cover;
-      display: block;
-    }
-
-    footer {
-      border-top: 1px solid rgba(74, 84, 121, 0.8);
-      padding: 16px 0 22px;
-      font-size: 11px;
-      color: var(--muted);
-      background: #05060a;
-    }
-
-    .footer-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-row span {
-      opacity: 0.9;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .experience-grid,
-      .location-grid,
-      .mix-grid,
-      .invest-grid,
-      .gallery-grid,
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 26px;
-      }
-
-      .hero-grid {
-        gap: 26px;
-      }
-
-      .gallery-side-grid {
-        max-height: 420px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .card-row {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .experience-list {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .pricing-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .form-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .section-title {
-        font-size: 18px;
-      }
-    }
-/* ------------------------------------------------------
-   NEW CONTACT SECTION — LUXURY VERSION
------------------------------------------------------- */
-
-.contact {
-  padding: 80px 0;
-  background: radial-gradient(circle at top, #0f1422, #05060a);
-  border-top: 1px solid rgba(90,100,150,0.45);
-}
-
-/* GRID */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-/* LEFT SIDE */
-.contact-intro { max-width: 520px; }
-
-.contact-kicker {
-  color: var(--accent);
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.contact-heading {
-  font-size: 26px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  margin-bottom: 16px;
-}
-
-.contact-lead {
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 22px;
-  max-width: 420px;
-}
-
-/* Pills */
-.contact-pill-row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 26px;
-}
-
-.contact-pill {
-  padding: 6px 12px;
-  border: 1px solid rgba(120,135,185,0.8);
-  border-radius: 999px;
-  font-size: 11px;
-  text-transform: uppercase;
-  background: rgba(10,12,20,0.88);
-  color: var(--muted);
-}
-
-/* Meta list */
-.contact-meta {
-  display: grid;
-  gap: 14px;
-}
-
-.contact-meta-item {
-  display: flex;
-  align-items: start;
-  gap: 10px;
-}
-
-.contact-meta-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(217,179,108,0.2);
-}
-
-.contact-meta-label {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--muted);
-}
-
-.contact-meta-value {
-  color: var(--text);
-  font-size: 13px;
-}
-
-/* RIGHT SIDE */
-.contact-form {
-  padding-left: 30px;
-  border-left: 1px solid rgba(85,95,135,0.5);
-}
-
-/* Logo */
-.contact-logo img {
-  width: 160px;
-  opacity: 0.9;
-  margin-bottom: 20px;
-}
-
-/* Titles */
-.contact-form-title {
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.16em;
-  margin-bottom: 6px;
-}
-
-.contact-form-sub {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 26px;
-}
-
-/* Fields */
-label {
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-input, select, textarea {
-  width: 100%;
-  padding: 8px 0;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(120,140,180,0.6);
-  color: var(--text);
-  transition: border-color .25s ease, box-shadow .25s ease;
-}
-
-input::placeholder, textarea::placeholder {
-  color: rgba(170,170,180,0.7);
-}
-
-input:focus, select:focus, textarea:focus {
-  border-bottom-color: var(--accent);
-  box-shadow: 0 2px 8px rgba(217,179,108,0.25);
-}
-
-/* Button */
-.contact-submit {
-  width: 100%;
-  margin-top: 10px;
-}
-
-/* Animations */
-.fade-section { opacity: 0; animation: fadeIn 1.2s ease forwards; }
-.fade-slide-up { opacity: 0; transform: translateY(20px); animation: slideUp .9s ease forwards; }
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-  .contact-form {
-    border-left: none;
-    padding-left: 0;
-    border-top: 1px solid rgba(85,95,135,0.4);
-    padding-top: 30px;
-  }
-}
   </style>
 </head>
+
 <body>
-  <div class="page">
-    <!-- Header -->
-    <header>
-      <div class="shell">
-        <nav class="nav">
-          <div class="nav-left">
-            <div class="logo-mark">CP</div>
-            <div class="logo-text">
-              <div class="logo-title">Central Park Gateway</div>
-              <div class="logo-sub">Ulaanbaatar &mdash; Park Rio Frontage</div>
-            </div>
-          </div>
-          <div class="nav-links">
-            <a href="#experience">Experience</a>
-            <a href="#location">Location</a>
-            <a href="#mix">Residences &amp; Offices</a>
-            <a href="#investment">Investment</a>
-               </div>
-          <div class="lang-switch">
-          <a class="lang-btn active" href="./index.html">EN</a>
-          <a class="lang-btn" href="./index-zh.html">中文</a>
-              </div>
-          <div class="nav-cta">
-              Register Interest
-            </button>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- Header banner image -->
-    <div class="header-banner">
-      <div class="header-banner-inner">
-        <div class="header-banner-image">
-          <img src="images/header.png" alt="Central Park Gateway header visual">
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-badge">CP</div>
+        <div>
+          <div style="font-size:14px; font-weight:800; line-height:1;">Central Park Gateway</div>
+          <div style="font-size:12px; color:var(--muted); line-height:1.2;">乌兰巴托 — Park Rio 沿线</div>
         </div>
+      </div>
+
+      <div class="nav-links" aria-label="页面导航">
+        <a href="#experience">体验生态</a>
+        <a href="#location">黄金地段</a>
+        <a href="#mix">住宅与写字楼</a>
+        <a href="#investment">投资价值</a>
+      </div>
+      <div class="lang-switch">
+        <a class="lang-btn active" href="./index.html">EN</a>
+        <a class="lang-btn" href="./index-zh.html">中文</a>
+      </div>
+      
+      <div class="cta">
+        <span class="pill">2026 年预售启动</span>
+        <a class="btn primary" href="#register">登记意向</a>
       </div>
     </div>
-    <!-- Hero -->
-    <main>
-      <section class="hero">
-        <div class="shell hero-grid">
-          <div>
-            <div class="eyebrow">Mixed-use landmark &mdash; Ulaanbaatar</div>
-            <h1 class="hero-title">
-              The Icon of<br />
-              Modern Mongolia
-            </h1>
-            <p class="hero-kicker">
-              A vertical ecosystem where luxury residences, prime offices and
-              destination retail converge along Park Rio&rsquo;s last AAA site.
-            </p>
-            <div class="hero-meta">
-              <span>Park Rio Frontage</span>
-              <span>Residential &bull; Office &bull; Retail</span>
-              <span>Completion 2028&ndash;2029</span>
-            </div>
-            <div class="hero-actions">
-              <button class="btn-gold">
-                Download Brochure
-              </button>
-              <button class="btn-outline" onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">
-                Explore Experience
-              </button>
-            </div>
-            <div class="hero-stat-row">
-              <div class="hero-stat">
-                <div class="hero-stat-label">Starting from</div>
-                <div class="hero-stat-value">USD 3,300 / m²*</div>
-              </div>
-              <div class="hero-stat">
-                <div class="hero-stat-label">Residential Revenue</div>
-                <div class="hero-stat-value">USD 129M</div>
-              </div>
-              <div class="hero-stat">
-                <div class="hero-stat-label">Total Development</div>
-                <div class="hero-stat-value">USD 200M</div>
-              </div>
-            </div>
-          </div>
+  </div>
 
-          <div class="hero-visual">
-            <div class="hero-card">
-              <div class="hero-image-frame">
-                <!-- HERO IMAGE -->
-                <img src="images/hero.png" alt="Central Park Gateway mixed-use development render">
-                <div class="hero-tag">Last AAA Site on Park Rio</div>
-              </div>
-              <div class="hero-glass-metrics">
-                <div class="hero-chip">Mongolia's First Vertical Lifestyle Ecosystem</div>
-                <div class="hero-chip">Ultra-Luxury Sky Villas &amp; Helipad Lounge</div>
-                <div class="hero-chip">Art, Wellness, Technology &amp; Culture in One Address</div>
-              </div>
-            </div>
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="panel hero-left">
+        <div class="kicker">乌兰巴托综合地标</div>
+        <h1>现代蒙古<br/>的地标之作</h1>
+        <p class="lead">
+          一座“垂直生态系统”，将奢华住宅、甲级写字楼与目的地商业汇聚于一体，
+          坐落在 Park Rio 沿线最后一块 AAA 级稀缺地段。
+        </p>
+
+        <div class="meta">
+          <span>Park Rio 沿线</span>
+          <span>住宅 • 写字楼 • 商业</span>
+          <span>预计交付：2028–2029</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#register">下载项目手册</a>
+          <a class="btn" href="#experience">探索体验生态</a>
+        </div>
+
+        <div class="stats" aria-label="关键数据">
+          <div class="stat">
+            <div class="small">起价</div>
+            <div class="big">USD 3,300 / m²*</div>
+          </div>
+          <div class="stat">
+            <div class="small">住宅销售收入</div>
+            <div class="big">USD 129M</div>
+          </div>
+          <div class="stat">
+            <div class="small">总开发规模</div>
+            <div class="big">USD 200M</div>
           </div>
         </div>
-      </section>
-
-      <!-- Experience Ecosystem -->
-      <section id="experience" class="experience">
-        <div class="shell">
-          <div class="section-header">
-            <div>
-              <div class="section-eyebrow">Experience Ecosystem</div>
-              <h2 class="section-title">
-                A Vertical World of Art, Wellness &amp; Culture
-              </h2>
-            </div>
-            <p class="section-sub">
-              Central Park Gateway transcends traditional real estate by offering an
-              orchestrated collection of world-class amenities&mdash;a destination that
-              rivals the world&rsquo;s finest mixed-use developments.
-            </p>
-          </div>
-
-          <div class="experience-grid">
-            <div>
-              <div class="experience-list">
-                <article class="card">
-                  <div class="card-label">Sky Onsen &amp; Thermal Spa Pods</div>
-                  <div class="card-body">
-                    A year-round heated sanctuary with glass roofs and panoramic skyline
-                    views, delivering resort-grade wellness at home.
-                  </div>
-                </article>
-                <article class="card">
-                  <div class="card-label">Sky Forest &amp; Urban Agriculture</div>
-                  <div class="card-body">
-                    Vertical greenery, herb gardens and urban farming decks supply
-                    on-site restaurants and elevate everyday living with nature.
-                  </div>
-                </article>
-                <article class="card card-soft">
-                  <div class="card-label">Art &amp; Culture Pavilion</div>
-                  <div class="card-body">
-                    Rotating exhibitions, embassy receptions and immersive digital
-                    showcases position the development as a cultural beacon.
-                  </div>
-                </article>
-                <article class="card card-soft">
-                  <div class="card-label">Library &amp; Drawing Room Salon</div>
-                  <div class="card-body">
-                    Walnut and brass interiors, fireplace, cognac bar and quiet reading
-                    alcoves for refined gatherings and private reflection.
-                  </div>
-                </article>
-                <article class="card">
-                  <div class="card-label">Outdoor Cinema Terrace</div>
-                  <div class="card-body">
-                    Open-air screenings under the stars, with curated F&amp;B service and
-                    unobstructed views of Ulaanbaatar&rsquo;s evolving skyline.
-                  </div>
-                </article>
-                <article class="card">
-                  <div class="card-label">Sky Lounge Rooftop Bar</div>
-                  <div class="card-body">
-                    A sophisticated rooftop destination with 360&deg; views, craft cocktails
-                    and a social calendar tailored to UB&rsquo;s global community.
-                  </div>
-                </article>
-              </div>
-              <p class="experience-note">
-                Every layer of the ecosystem has been curated to support a life of
-                wellness, productivity and cultural connection&mdash;designed for Mongolia&rsquo;s
-                global future.
-              </p>
-
-              <!-- Layout image -->
-              <div class="layout-visual">
-                <img src="images/layout.png" alt="Central Park Gateway layout and experience overview">
-              </div>
-            </div>
-
-            <aside class="experience-visual">
-              <h4>Technology &amp; Innovation</h4>
-              <div class="experience-visual-main">
-                An intelligent, connected tower with hotel-grade services, powered by
-                AI, satellite connectivity and real-time sustainability insights.
-              </div>
-              <div class="experience-chips" style="margin-bottom: 10px;">
-                <span class="chip">AI Concierge &amp; Smart Home Control</span>
-                <span class="chip">Starlink Work Lounge</span>
-                <span class="chip">E-Sports &amp; Golf Simulation</span>
-                <span class="chip">Sustainability Performance Wall</span>
-              </div>
-              <p class="card-body">
-                Residents and office users enjoy seamless control over lighting,
-                temperature, curtains and services, while robust connectivity ensures
-                uninterrupted business and entertainment.
-              </p>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <!-- Location -->
-      <section id="location">
-        <div class="shell">
-          <div class="section-header">
-            <div>
-              <div class="section-eyebrow">Location</div>
-              <h2 class="section-title">
-                An Irreplaceable Address on Park Rio
-              </h2>
-            </div>
-            <p class="section-sub">
-              The last remaining AAA-rated site fronting Park Rio, anchoring Ulaanbaatar&rsquo;s
-              cultural, financial and diplomatic core&mdash;a position that cannot be
-              replicated.
-            </p>
-          </div>
-
-          <div class="location-grid">
-            <div>
-              <article class="card">
-                <div class="card-label">Zero Comparable Supply</div>
-                <h3 class="card-title">
-                  What can never be rebuilt, in the heart of the capital.
-                </h3>
-                <p class="card-body">
-                  With no future land parcels of similar quality on Park Rio, Central Park
-                  Gateway benefits from structural scarcity. This underpins long-term
-                  capital preservation and sustained demand for both residential and
-                  commercial product.
-                </p>
-              </article>
-              <article class="card card-soft" style="margin-top: 14px;">
-                <div class="card-label">UB&rsquo;s Cultural &amp; Financial Hub</div>
-                <p class="card-body">
-                  Walkable access to premier schools, embassies, financial institutions,
-                  premium retail and hospitality defines the project as the new benchmark
-                  for live-work-play in Ulaanbaatar.
-                </p>
-              </article>
-            </div>
-
-            <aside class="location-map">
-              <div class="location-map-inner">
-                <div class="map-figure">
-                  <img src="images/map.png" alt="Central Park Gateway location map in Ulaanbaatar">
-                </div>
-                <div>
-                  <div class="card-label">Park Rio Frontage</div>
-                  <p class="location-tagline">
-                    Opening directly onto Ulaanbaatar&rsquo;s premier green space, the tower
-                    offers unobstructed park, river and skyline views rarely seen in the
-                    city.
-                  </p>
-                </div>
-                <div class="location-points">
-                  <div class="location-pill">
-                    2&ndash;5 min to central CBD offices and ministries
-                  </div>
-                  <div class="location-pill">
-                    Walking distance to top international schools
-                  </div>
-                  <div class="location-pill">
-                    Immediate access to high-end malls and dining
-                  </div>
-                  <div class="location-pill">
-                    Protected view corridors over Park Rio and beyond
-                  </div>
-                </div>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <!-- Product Mix: Residential & Commercial -->
-      <section id="mix">
-        <div class="shell">
-          <div class="section-header">
-            <div>
-              <div class="section-eyebrow">Residential &amp; Commercial Mix</div>
-              <h2 class="section-title">
-                Ultra-Luxury Living Meets Prime Office &amp; Retail
-              </h2>
-            </div>
-            <p class="section-sub">
-              Central Park Gateway combines exclusive sky villas, premium apartments,
-              institutional-grade offices and high-performing retail into a cohesive
-              mixed-use ecosystem.
-            </p>
-          </div>
-
-          <div class="mix-grid">
-            <div>
-              <article class="card">
-                <div class="card-label">Ultra-Luxury Living</div>
-                <h3 class="card-title">Sky Villas &amp; Penthouse Gardens</h3>
-                <p class="card-body">
-                  Expansive sky villas with private rooftop gardens and the city&rsquo;s only
-                  helipad lounge set a new standard for ultra-high-net-worth living in
-                  Mongolia. These homes are designed as vertical estates above the
-                  capital.
-                </p>
-              </article>
-              <article class="card card-soft" style="margin-top: 14px;">
-                <div class="card-label">Modern Residences &amp; Offices</div>
-                <p class="card-body">
-                  Efficient, light-filled apartments and next-generation office floors
-                  are optimized for both local and international occupiers, capturing
-                  strong demand in Ulaanbaatar&rsquo;s top-performing districts.
-                </p>
-              </article>
-            </div>
-
-            <aside>
-              <article class="card">
-                <div class="card-label">Program Overview</div>
-                <table class="mix-table">
-                  <thead>
-                    <tr>
-                      <th>Component</th>
-                      <th>Positioning</th>
-                      <th>Indicative Pricing*</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Residences</td>
-                      <td>Sky villas &amp; premium apartments</td>
-                      <td>USD 3,300 &ndash; 7,000 / m²</td>
-                    </tr>
-                    <tr>
-                      <td>Office</td>
-                      <td>Prime CBD-grade floors</td>
-                      <td>Market-leading UB office pricing</td>
-                    </tr>
-                    <tr>
-                      <td>Retail</td>
-                      <td>Destination mall &amp; F&amp;B cluster</td>
-                      <td>Premium Park Rio frontage</td>
-                    </tr>
-                    <tr>
-                      <td>Amenities</td>
-                      <td>Onsen, sky lounge, club spaces</td>
-                      <td>Residents &amp; tenants only</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p class="mix-highlight">
-                  *Indicative mixed-use pricing strategy will be refined in line with
-                  market absorption, construction milestones and broader UB residential,
-                  office and mall data.
-                </p>
-              </article>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <!-- Render Gallery: Non-Box Architecture -->
-<section class="gallery">
-  <div class="shell">
-    <div class="section-header">
-      <div>
-        <div class="section-eyebrow">Architectural Vision</div>
-        <h2 class="section-title">
-          Iconic Non-Box Architecture on the Skyline
-        </h2>
       </div>
-      <p class="section-sub">
-        Non-box massing, sculpted terraces and a stepped profile create a true
-        landmark presence on Park Rio while maximizing views, light and outdoor
-        space.
+
+      <div class="panel hero-right" aria-label="头图">
+        <!-- 把下面文件名换成你仓库真实图片文件名 -->
+        <img class="hero-img" src="images/hero.jpg" alt="Central Park Gateway 头图渲染" />
+        <div class="img-overlay"></div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="section" aria-label="项目亮点">
+      <div class="grid">
+        <div class="card">
+          <h3>Park Rio 沿线最后 AAA 级地块</h3>
+          <p>不可复制的稀缺性，支撑长期保值与需求韧性。</p>
+        </div>
+        <div class="card">
+          <h3>蒙古首个垂直生活方式生态</h3>
+          <p>将居住、办公、社交、文化、健康在一处完整闭环。</p>
+        </div>
+        <div class="card">
+          <h3>超高端空中别墅与停机坪会所</h3>
+          <p>定义乌兰巴托高净值人群的“空中府邸”生活方式。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <h2>体验生态｜艺术、健康与文化的垂直世界</h2>
+      <p>
+        Central Park Gateway 不止是传统地产，更是由世界级配套组成的目的地综合体，
+        在同类项目中具备国际级竞争力。
       </p>
-    </div>
 
-    <div class="gallery-grid">
-      <!-- MAIN NONBOX IMAGE -->
-      <div class="gallery-main">
-        <img src="images/nonbox.jpg" alt="Central Park Gateway non-box architectural form">
-      </div>
-
-      <!-- SIDE COLUMN REMOVED — ONLY ONE IMAGE NOW -->
-      <div class="gallery-side">
-        <div class="gallery-side-grid">
-
-          <!-- KEEP ONLY THE NONBOX IMAGE (as a repeated detail shot if needed) -->
-          <img src="images/nonbox2.jpg" alt="Non-box architectural angle">
+      <div class="grid" style="margin-top:14px;">
+        <div class="card">
+          <h3>空中温泉 & 热疗 SPA</h3>
+          <p>全年恒温的疗愈空间，玻璃穹顶与城市天际线景观，打造度假级居家健康体验。</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <!-- Investment & Pricing -->
-      <section id="investment">
-        <div class="shell">
-          <div class="section-header">
-            <div>
-              <div class="section-eyebrow">Investment Case</div>
-              <h2 class="section-title">
-                A Once-in-a-Generation Capital Preservation Asset
-              </h2>
-            </div>
-            <p class="section-sub">
-              Backed by proven developers and experienced marketing partners, Central
-              Park Gateway is designed to deliver resilient returns across residential,
-              office and retail components.
-            </p>
-          </div>
-
-          <div class="invest-grid">
-            <div>
-              <div class="badge-tag">
-                <span></span> Structured release strategy
-              </div>
-              <article class="card">
-                <div class="card-label">Strategic Pricing Architecture</div>
-                <p class="card-body">
-                  A carefully staged pricing roadmap aligns with construction milestones
-                  and demand, protecting early buyers and maximizing upside.
-                </p>
-                <div class="pricing-grid">
-                  <div class="pricing-tile">
-                    <div class="pricing-phase">Presale &mdash; 2026</div>
-                    <div class="pricing-range">From USD 3,300 / m²</div>
-                    <div class="pricing-note">
-                      Early adopter advantage, limited release of best stacks.
-                    </div>
-                  </div>
-                  <div class="pricing-tile">
-                    <div class="pricing-phase">Mid Sales &mdash; 2027</div>
-                    <div class="pricing-range">USD 3,800 &ndash; 4,500 / m²</div>
-                    <div class="pricing-note">
-                      Experience ecosystem revealed; proven value drives premium.
-                    </div>
-                  </div>
-                  <div class="pricing-tile">
-                    <div class="pricing-phase">Completion &mdash; 2028&ndash;2029</div>
-                    <div class="pricing-range">USD 5,000 &ndash; 5,500 / m²</div>
-                    <div class="pricing-note">
-                      Fully realized landmark commands top-tier pricing.
-                    </div>
-                  </div>
-                  <div class="pricing-tile">
-                    <div class="pricing-phase">Sky Villas &amp; Penthouses</div>
-                    <div class="pricing-range">USD 6,500 &ndash; 7,000 / m²</div>
-                    <div class="pricing-note">
-                      Mongolia&rsquo;s most exclusive residences, with helipad lounge.
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <aside>
-              <article class="card card-soft">
-                <div class="card-label">Projected Sales Revenue</div>
-                <p class="card-body">
-                  Central Park Gateway targets a conservative revenue projection of
-                  approximately:
-                </p>
-                <div class="invest-figure">
-                  <strong>USD 200 million</strong> in total development sales, with
-                  diversified income streams across:<br /><br />
-                  <strong>USD 129M</strong> &mdash; Residential<br />
-                  <strong>USD 45M</strong> &mdash; Office<br />
-                  <strong>USD 26M</strong> &mdash; Retail
-                </div>
-                <p class="card-body" style="margin-top: 10px;">
-                  Phased releases (30% presale, 40% mid-sales, 30% completion) ensure
-                  healthy absorption and allow the development brand to mature, supporting
-                  price growth over time.
-                </p>
-                <p class="card-body" style="margin-top: 8px; font-size: 11px;">
-                  *Figures represent high-yield scenarios; low-yield assumptions may
-                  reduce totals by approx. 20%.
-                </p>
-              </article>
-            </aside>
-          </div>
+        <div class="card">
+          <h3>空中森林 & 城市农业</h3>
+          <p>垂直绿化、香草花园与城市农场平台，为餐饮提供本地供给，让日常更贴近自然。</p>
         </div>
-      </section>
-
-      <!-- CONTACT / REGISTER -->
-<section id="register" class="contact fade-section">
-  <div class="shell">
-    <div class="contact-grid">
-
-      <!-- LEFT SIDE — INTRO -->
-      <div class="contact-intro fade-slide-up">
-        <div class="contact-kicker">Private Preview — by Invitation</div>
-
-        <h3 class="contact-heading">
-          Register Your Interest<br>in Central Park Gateway
-        </h3>
-
-        <p class="contact-lead">
-          Share a few details and our team will connect with you to discuss availability, 
-          tailored unit recommendations and next steps.
-        </p>
-
-        <div class="contact-pill-row">
-          <div class="contact-pill">Priority Access</div>
-          <div class="contact-pill">Investment Briefings</div>
-          <div class="contact-pill">Launch Events</div>
+        <div class="card">
+          <h3>艺术与文化展亭</h3>
+          <p>轮换展览、使馆活动与沉浸式数字展示，让项目成为城市文化地标。</p>
         </div>
-
-        <div class="contact-meta">
-          <div class="contact-meta-item">
-            <span class="contact-meta-dot"></span>
-            <div>
-              <div class="contact-meta-label">Sales Gallery</div>
-              <div class="contact-meta-value">Mon–Sat • 10:00–19:00</div>
-            </div>
-          </div>
-          <div class="contact-meta-item">
-            <span class="contact-meta-dot"></span>
-            <div>
-              <div class="contact-meta-label">Contact</div>
-              <div class="contact-meta-value">+976 • info@centralparkgateway.mn</div>
-            </div>
-          </div>
-          <div class="contact-meta-item">
-            <span class="contact-meta-dot"></span>
-            <div>
-              <div class="contact-meta-label">Location</div>
-              <div class="contact-meta-value">Park Rio Frontage, Ulaanbaatar</div>
-            </div>
-          </div>
+        <div class="card">
+          <h3>图书馆 & 沙龙会客厅</h3>
+          <p>胡桃木与黄铜质感空间，壁炉、酒吧与静谧阅读区，适合私享聚会与沉思时刻。</p>
+        </div>
+        <div class="card">
+          <h3>户外星空影院露台</h3>
+          <p>露天观影与精选餐饮服务，尽享乌兰巴托不断演进的天际线。</p>
+        </div>
+        <div class="card">
+          <h3>空中会所｜屋顶酒吧</h3>
+          <p>360° 城市景观、精调鸡尾酒与面向国际社群的社交日历。</p>
         </div>
       </div>
 
-      <!-- RIGHT SIDE — FORM -->
-      <div class="contact-form fade-slide-up">
-
-        <!-- LOGO -->
-        <div class="contact-logo">
-          <img src="images/logo.png" alt="Central Park Gateway Logo">
-        </div>
-
-        <div class="contact-form-title">Request a Private Preview</div>
-        <p class="contact-form-sub">
-          Complete the form — we will respond within one business day.
-        </p>
-
-        <form>
-          <div class="form-grid">
-            <div>
-              <label>Full Name</label>
-              <input type="text" placeholder="Enter your name">
-            </div>
-            <div>
-              <label>Email</label>
-              <input type="email" placeholder="name@example.com">
-            </div>
-          </div>
-
-          <div class="form-grid">
-            <div>
-              <label>Phone / WhatsApp</label>
-              <input type="tel" placeholder="+976 ...">
-            </div>
-            <div>
-              <label>City / Country</label>
-              <input type="text" placeholder="Ulaanbaatar, Mongolia">
-            </div>
-          </div>
-
-          <div class="form-grid">
-            <div>
-              <label>Primary Interest</label>
-              <select>
-                <option>Residential purchase</option>
-                <option>Office space</option>
-                <option>Retail unit</option>
-                <option>Investment enquiry</option>
-                <option>General information</option>
-              </select>
-            </div>
-            <div>
-              <label>Indicative Budget</label>
-              <select>
-                <option>Under USD 300k</option>
-                <option>USD 300k – 600k</option>
-                <option>USD 600k – 1M</option>
-                <option>USD 1M – 3M</option>
-                <option>USD 3M+</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-grid-1">
-            <div>
-              <label>Notes</label>
-              <textarea placeholder="Tell us about your preferences..."></textarea>
-            </div>
-          </div>
-
-          <button type="submit" class="btn-gold contact-submit">
-            Submit Registration
-          </button>
-
-          <p class="contact-fineprint">
-            Your information is kept confidential and will only be used for Central Park Gateway communications.
+      <div class="split">
+        <div class="card">
+          <h3>科技与创新</h3>
+          <p style="margin-top:6px;">
+            智能互联的高塔，提供酒店级服务体系，由 AI、卫星连接与实时可持续数据驱动。
           </p>
-        </form>
+          <p class="note" style="margin-top:10px;">
+            关键词：AI 管家与智能家居控制｜Starlink 工作会客区｜电竞与高尔夫模拟｜可持续表现展示墙
+          </p>
+        </div>
 
+        <div class="panel media" aria-label="体验生态配图">
+          <img src="images/experience.jpg" alt="体验生态概览图" />
+        </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <!-- LOCATION -->
+    <section class="section" id="location">
+      <h2>地段｜Park Rio 核心不可替代的地址</h2>
+      <p>
+        位于 Park Rio 沿线最后一块 AAA 级临街地段，处在乌兰巴托文化、金融与外交核心区，
+        地段价值无法复制。
+      </p>
 
+      <div class="split">
+        <div class="card">
+          <h3>零可比供应</h3>
+          <p style="margin-top:6px;">
+            Park Rio 沿线未来不再有同等级土地释放，稀缺性带来结构性优势，
+            支撑长期保值与持续需求（住宅与商业同样受益）。
+          </p>
 
-
-      <!-- Footer image section -->
-      <section class="footer-image-section">
-        <div class="shell">
-          <div class="footer-image-frame">
-            <img src="images/footer.png" alt="Central Park Gateway evening skyline visual">
+          <div class="grid" style="grid-template-columns:1fr; margin-top:12px;">
+            <div class="card" style="background:rgba(255,255,255,.03);">
+              <h3 style="margin-bottom:8px;">关键通达性</h3>
+              <p>• 2–5 分钟到核心 CBD 办公区与政府机构</p>
+              <p>• 步行可达优质国际学校</p>
+              <p>• 紧邻高端商场与餐饮配套</p>
+              <p>• Park Rio 及河景视廊保护，视野稀缺</p>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
 
-    <!-- Footer -->
+        <div class="panel media" aria-label="区位图">
+          <img src="images/location.jpg" alt="乌兰巴托区位图" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MIX -->
+    <section class="section" id="mix">
+      <h2>产品组合｜超高端居住 × 甲级办公 × 高效商业</h2>
+      <p>
+        Central Park Gateway 将空中别墅、高端公寓、机构级写字楼与高性能零售整合成一个完整生态，
+        在同一地址实现“居住-办公-消费-社交”的闭环体验。
+      </p>
+
+      <div class="grid" style="margin-top:14px;">
+        <div class="card">
+          <h3>超高端居住</h3>
+          <p>空中别墅与顶层花园，配备停机坪会所，树立乌兰巴托高净值居住新标准。</p>
+        </div>
+        <div class="card">
+          <h3>现代公寓与写字楼</h3>
+          <p>采光充足、效率优先的户型与办公层，满足本地与国际企业入驻需求。</p>
+        </div>
+        <div class="card">
+          <h3>目的地商业与餐饮集群</h3>
+          <p>Park Rio 临街黄金展示面，打造高端零售与餐饮目的地。</p>
+        </div>
+      </div>
+
+      <div class="table" role="region" aria-label="产品概览">
+        <table>
+          <thead>
+            <tr>
+              <th>业态</th>
+              <th>定位</th>
+              <th>参考价格*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>住宅</td>
+              <td>空中别墅与高端公寓</td>
+              <td>USD 3,300 – 7,000 / m²</td>
+            </tr>
+            <tr>
+              <td>写字楼</td>
+              <td>核心区 CBD 级办公层</td>
+              <td>乌兰巴托领先办公定价</td>
+            </tr>
+            <tr>
+              <td>商业</td>
+              <td>目的地购物与餐饮集群</td>
+              <td>Park Rio 临街溢价</td>
+            </tr>
+            <tr>
+              <td>配套</td>
+              <td>温泉、空中会所、俱乐部空间</td>
+              <td>仅住户与租户专享</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">
+        * 综合体定价策略将根据市场去化、施工节点与乌兰巴托住宅/办公/商业数据持续优化。
+      </p>
+
+      <div class="split">
+        <div class="panel media" aria-label="建筑形态配图">
+          <img src="images/architecture.jpg" alt="非盒子化建筑形态渲染" />
+        </div>
+        <div class="card">
+          <h3>建筑愿景｜非盒子化天际线地标</h3>
+          <p style="margin-top:6px;">
+            雕塑感体量、层叠露台与递进轮廓，既强化地标识别度，也最大化视野、采光与户外空间。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTMENT -->
+    <section class="section" id="investment">
+      <h2>投资价值｜一代难遇的资本保全型资产</h2>
+      <p>
+        由成熟开发团队与经验丰富的营销伙伴联合打造，项目以住宅、办公、商业多元收入结构，
+        追求在不同周期下的稳健回报。
+      </p>
+
+      <div class="grid" style="margin-top:14px;">
+        <div class="card">
+          <h3>结构化发售策略</h3>
+          <p>分阶段释放，兼顾去化健康与品牌溢价成长。</p>
+        </div>
+        <div class="card">
+          <h3>战略定价体系</h3>
+          <p>与施工节点和市场需求匹配，保护早期购买者并放大上行空间。</p>
+        </div>
+        <div class="card">
+          <h3>稀缺性驱动的保值逻辑</h3>
+          <p>Park Rio 沿线“最后 AAA”区位稀缺，形成天然护城河。</p>
+        </div>
+      </div>
+
+      <div class="table" role="region" aria-label="定价路线图">
+        <table>
+          <thead>
+            <tr>
+              <th>阶段</th>
+              <th>时间</th>
+              <th>参考价格</th>
+              <th>要点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>预售</td>
+              <td>2026</td>
+              <td>USD 3,300 / m² 起</td>
+              <td>早鸟优势，优质楼层/朝向限量释放</td>
+            </tr>
+            <tr>
+              <td>中期销售</td>
+              <td>2027</td>
+              <td>USD 3,800 – 4,500 / m²</td>
+              <td>体验生态逐步兑现，价值验证带来溢价</td>
+            </tr>
+            <tr>
+              <td>交付阶段</td>
+              <td>2028–2029</td>
+              <td>USD 5,000 – 5,500 / m²</td>
+              <td>地标全面落成，价格进入顶级区间</td>
+            </tr>
+            <tr>
+              <td>空中别墅/顶层</td>
+              <td>2028–2029</td>
+              <td>USD 6,500 – 7,000 / m²</td>
+              <td>蒙古最稀缺高端住宅，停机坪会所加持</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3>预计销售收入（保守测算）</h3>
+        <p style="margin-top:6px;">
+          总销售额约 USD 200M；其中住宅约 USD 129M、写字楼约 USD 45M、商业约 USD 26M。
+        </p>
+        <p class="note" style="margin-top:10px;">
+          分期释放（约 30% 预售、40% 中期、30% 交付）有助于健康去化并推动价格随品牌成熟增长。
+          * 高收益情景测算；低收益假设可能降低约 20%。
+        </p>
+      </div>
+    </section>
+
+    <!-- REGISTER -->
+    <section class="section" id="register">
+      <h2>私享预览｜登记意向</h2>
+      <p>
+        填写简单信息，我们的团队将与您联系，提供可售/可租信息、匹配户型建议与后续流程。
+      </p>
+
+      <div class="form-wrap">
+        <div class="panel side">
+          <h3>您将获得</h3>
+          <ul>
+            <li>优先认购/认租资格</li>
+            <li>投资与产品说明会邀请</li>
+            <li>项目发布与活动通知</li>
+            <li>售楼处参观安排</li>
+          </ul>
+
+          <div class="card" style="margin-top:14px; background:rgba(255,255,255,.03);">
+            <h3>售楼处开放时间</h3>
+            <p style="margin-top:6px;">周一至周六 • 10:00–19:00</p>
+            <div class="note" style="margin-top:10px;">
+              联系方式：<a href="mailto:info@centralparkgateway.mn">info@centralparkgateway.mn</a><br/>
+              地址：Park Rio 沿线，乌兰巴托
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div>
+                <label for="name">姓名</label>
+                <input id="name" name="name" placeholder="请输入您的姓名" required />
+              </div>
+              <div>
+                <label for="email">邮箱</label>
+                <input id="email" name="email" type="email" placeholder="name@example.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="phone">电话 / WhatsApp</label>
+                <input id="phone" name="phone" placeholder="+976 ..." />
+              </div>
+              <div>
+                <label for="city">城市 / 国家</label>
+                <input id="city" name="city" placeholder="乌兰巴托 / 中国 / ..." />
+              </div>
+            </div>
+
+            <label for="interest">主要意向</label>
+            <select id="interest" name="interest">
+              <option>住宅购买</option>
+              <option>写字楼空间</option>
+              <option>商业铺位</option>
+              <option>投资咨询</option>
+              <option>了解更多信息</option>
+            </select>
+
+            <label for="budget">预算区间（参考）</label>
+            <select id="budget" name="budget">
+              <option>USD 300k 以下</option>
+              <option>USD 300k – 600k</option>
+              <option>USD 600k – 1M</option>
+              <option>USD 1M – 3M</option>
+              <option>USD 3M+</option>
+            </select>
+
+            <label for="notes">备注</label>
+            <textarea id="notes" name="notes" placeholder="例如：偏好楼层/朝向、用途、预计购买时间等"></textarea>
+
+            <div class="form-actions">
+              <button class="btn primary" type="submit">提交登记</button>
+              <a class="btn" href="#top">返回顶部</a>
+            </div>
+
+            <div class="fineprint">
+              您的信息将严格保密，仅用于 Central Park Gateway 相关沟通。
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="panel media" style="margin-top:12px;">
+        <img src="images/footer.jpg" alt="夜景渲染图" />
+      </div>
+    </section>
+
     <footer>
-      <div class="shell footer-row">
-        <span>&copy; Central Park Gateway. All rights reserved.</span>
-        <span>Ulaanbaatar &mdash; Park Rio Mixed-Use Development</span>
+      <div>© Central Park Gateway. 保留所有权利。</div>
+      <div class="contact">
+        <span>联系：</span>
+        <a href="mailto:info@centralparkgateway.mn">info@centralparkgateway.mn</a>
+        <span style="opacity:.6;">｜</span>
+        <span>乌兰巴托 — Park Rio 综合体</span>
       </div>
     </footer>
-  </div>
+  </main>
+
+  <script>
+    // 平滑滚动（不依赖任何库）
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const id = a.getAttribute("href");
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    function handleSubmit(e){
+      e.preventDefault();
+      // 这里先做前端占位：你可以替换为真实表单提交（Formspree / Google Forms / 自家 API）
+      alert("已提交！我们会在一个工作日内与您联系。");
+      e.target.reset();
+    }
+  </script>
 </body>
 </html>
-
-
